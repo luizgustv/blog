@@ -8,31 +8,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity //essa classe é uma entidade
 @Table(name="TB_POST") //é uma tabela do banco de nome tb_post
 public class Post {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@NotBlank
-	private String titulo;
-	
-	@NotBlank
-	private String autor;
-	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	private LocalDate data;
-	
-	@NotBlank
-	@Lob //(anotacao para q o banco de dados possa receber dados de volume maior)
-	private String texto;
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+
+    @NotBlank
+    private String titulo;
+
+    @NotBlank
+    private String autor;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+    private LocalDate data;
+
+    @NotBlank
+    @Lob //(anotacao para q o banco de dados possa receber dados de volume maior)
+    private String texto;
 
 	public Long getId() {
 		return id;

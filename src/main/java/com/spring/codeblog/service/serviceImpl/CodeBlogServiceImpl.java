@@ -27,7 +27,6 @@ public class CodeBlogServiceImpl implements CodeblogService{
 
 	@Override
 	public Post save(Post post) {
-		System.out.println("método utilizado!");
 		return codeblogRepository.save(post);
 	}
 
